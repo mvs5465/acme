@@ -1,5 +1,19 @@
-.col-centered { text-align: center; }
-.status { font-style: italic }
-.bordered { border-style: 1px solid black; }
-.designer {font-color: blue}
-.designer-header {font-family: bold}
+.centered {
+    text-align: center;
+}
+
+.server-status {
+    font-style: italic;
+    color: green;
+}
+
+.navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+.navbar-brand {
+    float: none;
+}

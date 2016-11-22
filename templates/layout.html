@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>{{ title }} - the laboratory is renewed</title>
-  <link rel=stylesheet type=text/css href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
-</head>
+    <title>The Laboratory 2.0 - {{ title }}</title>
+    <link rel=stylesheet type=text/css href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}"> </head>
+
 <body>
-  <div name=status>{%include "status.html" %}</div>
-  <div name=content>{% block content %}{% endblock %}</div>
+    <div name=header>{%include "header.html" %}</div>
+    <div name=status>{%include "status.html" %}</div>
+    <div name=content>{% block content %}{% endblock %}</div>
 </body>
+
 </html>

@@ -1,21 +1,8 @@
-{% extends "layout.html" %}
-{% block content %}
-  <h3 class=col-centered> &#60 filler &#62 </h3>
-  <div class="row col-centered bordered">
-    <div class=col-md-4>
-      {% include "resume.html" %}
-    </div>
-    <div class=col-md-4>
-      {% include "aboutme.html" %}
-      <hr>
-      {% if content is defined %}
-        {% include content %} 
-      {% else %}
-        {# do nothing #}
-      {% endif %}
-    </div>
-    <div class=col-md-4>
-      {% include "hobbies.html" %}
-    </div>
-  </div>
-{% endblock %}
+{% extends "layout.html" %} {% block content %}
+<h3 class=centered> &#60 filler &#62 </h3>
+<div class="row centered bordered">
+    <div class=col-md-4> {% include "resume.html" %} </div>
+    <div class=col-md-4> {% include "aboutme.html" %}
+        <hr> {% if content is defined %} {% include content %} {% else %} {# do nothing #} {% endif %} </div>
+    <div class=col-md-4> {% include "hobbies.html" %} </div>
+</div> {% endblock %}
