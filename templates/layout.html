@@ -3,13 +3,18 @@
 
 <head>
     <title>The Laboratory 2.0 - {{ title }}</title>
-    <link rel=stylesheet type=text/css href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}"> </head>
+    <script src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+    </style>
+</head>
 
 <body>
     <div name=header>{%include "header.html" %}</div>
-    <div name=status>{%include "status.html" %}</div>
-    <div name=content>{% block content %}{% endblock %}</div>
+    <div name=body>{%include "body.html" %} </div>
 </body>
 
 </html>

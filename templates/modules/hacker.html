@@ -1,0 +1,10 @@
+<div class=centered>
+    <div class=module>
+        <div class=module-title>Module: {{title}}</div> Your IP address: {{ipaddr}}
+        <hr>
+        <div style="text-align: left;">
+            <ul>Route: {% for route in routes %}
+                <li>{{route}}</li> {% endfor %} </ul>
+        </div>
+    </div>
+</div>
