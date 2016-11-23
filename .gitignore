@@ -1,2 +1,9 @@
 acme.pyc
+config.pyc
+__init__.pyc
+models.pyc
+views.pyc
+
+database/
 .DS_Store
+

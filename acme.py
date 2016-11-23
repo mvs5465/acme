@@ -1,25 +1,39 @@
-## Header info ##
-from flask import Flask, render_template, request
+from flask import Flask, request, session, g, redirect, url_for, abort, render_template, flash
+import os
+import sqlite3 as sql
+
 
 app = Flask(__name__)
 app.config.from_object(__name__)
 
-@app.route('/')
-def show_index():
-  return render_template('layout.html', title='ACME', status='good')
+#import models
+import views
 
-@app.route('/programmer')
-def programmer():
-  return render_template('layout.html', title='Programmer', content='programmer.html', status='good')
+DATABASE = 'database/database.sqlite'
 
-@app.route('/designer')
-def designer():
-  return render_template('layout.html', title='Designer', content='designer.html', status='good')
+def connect_db():
+    """Connects to the specific database."""
+    rv = sql.connect(DATABASE)
+    #rv.row_factory = sql.Row
+    return rv
 
-@app.route('/hacker')
-def hacker():
-    ipaddr=request.remote_addr
-    routes=request.access_route
-    return render_template('layout.html', title='Hacker', content='modules/hacker.html', status='bad', ipaddr=ipaddr, routes=routes)
+def get_db():
+    """Opens a new database connection if there is none yet for the
+    current application context.
+    """
+    if not hasattr(g, 'sqlite_db'):
+        g.sqlite_db = connect_db()
+    return g.sqlite_db
 
-    
+@app.teardown_appcontext
+def close_db(error):
+    """Closes the database again at the end of the request."""
+    if hasattr(g, 'sqlite_db'):
+        g.sqlite_db.close()
+        
+@app.route('/db/all')
+def show_entries():
+    db = get_db()
+    cur = db.execute('SELECT * FROM salaries WHERE JobTitle=\'Transit Operator\';')
+    entries = cur.fetchall()
+    return render_template('layout.html', content='modules/data.html', status='running', entries=entries)
