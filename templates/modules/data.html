@@ -1,6 +1,35 @@
-<a href="/db/all">Load Data</a>
-<ul style="text-align: left"> 
-    {% for entry in entries %}
-    <li>{{ entry }}</li> 
-    {% endfor %} 
-</ul>
+<div name=data class=centered>
+    <form action="/db/custom" style="color:black"> Please enter a query below: <br>
+        <input type=text name=query_str size=50 value="{{query}}">
+        <input type=submit>
+    </form>
+    <hr>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>EmployeeName</th>
+            <th>JobTitle</th>
+            <th>BasePay</th>
+            <th>OvertimePay</th>
+            <th>OtherPay</th>
+            <th>Benefits</th>
+            <th>TotalPay</th>
+            <th>TotalPayBenefits</th>
+            <th>Year</th>
+            <th>Notes</th>
+            <th>Agency</th>
+            <th>Status</th>
+        </tr>
+    </table>
+    <br>
+    <table border="1"> 
+        <tr>{% for key in keys %}<th>{{key[0]}}</th>{% endfor %}</tr>
+        {% for row in entries %}
+        <tr> 
+            {% for col in row %}
+            <td>{{ col }}</td> 
+            {% endfor %} 
+        </tr> 
+        {% endfor %} 
+    </table>
+</div>

@@ -1,5 +1,4 @@
 body {
-    font-family: 'Raleway', sans-serif;
     background-color: black;
 /*    background-image: url("banner.jpg");*/
     background-position: center bottom;
@@ -11,9 +10,6 @@ body {
 }
 
 .status {
-    position: absolute;
-    top: 5px;
-    left: 5px;
     font-style: normal;
     color: lightgrey;
 }
@@ -23,6 +19,9 @@ body {
 }
 
 .header {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    color: lightgray;
     text-align: center;
     margin: 0px;
     padding: 10px;
@@ -30,21 +29,27 @@ body {
     color: gold;
     background-color: #303030;
 }
-.title {
-    font-size: 30px;
-}
 
-.subtitle {
+.header-title {}
+
+.header-subtitle {
+    font-style: italic;
     padding-top: 5px;
     font-size: 15px;
 }
 
-.content {
+.block1 {
     text-align: center;
     color: white;
     font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
+}
+
+.body-col {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100%;
 }
 
 .module {

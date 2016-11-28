@@ -6,9 +6,6 @@ import sqlite3 as sql
 app = Flask(__name__)
 app.config.from_object(__name__)
 
-#import models
-import views
-
 DATABASE = 'database/database.sqlite'
 
 def connect_db():
@@ -31,9 +28,7 @@ def close_db(error):
     if hasattr(g, 'sqlite_db'):
         g.sqlite_db.close()
         
-@app.route('/db/all')
-def show_entries():
-    db = get_db()
-    cur = db.execute('SELECT * FROM salaries WHERE JobTitle=\'Transit Operator\';')
-    entries = cur.fetchall()
-    return render_template('layout.html', content='modules/data.html', status='running', entries=entries)
+import routes
+        
+#import models
+
