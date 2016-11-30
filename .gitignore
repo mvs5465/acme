@@ -3,7 +3,8 @@ config.pyc
 __init__.pyc
 models.pyc
 views.pyc
+routes.pyc
+run.pyc
 
 database/
 .DS_Store
-

@@ -1,107 +1,110 @@
 <div class=container-fluid>
-        <div class="row dataform">
-            <h2>Custom Query</h2>
-            <form action="/db/custom" style="color:black">
-                <div class=col-md-4>
-                    <h3>Select columns to return:</h3>
-                    <label>
-                        <input type="checkbox" id="id" value="id">ID</label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="employeename" value="employeename">Employee Name</label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="jobtitle" value="jobtitle">Job Title</label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="basepay" value="basepay">Base Pay</label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="overtimepay" value="overtimepay">Overtime Pay</label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="otherpay" value="otherpay">Other Pay</label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="otherpay" value="otherpay">Benefits</label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="totalpay" value="totalpay">Total Pay</label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="totalpaybenefits" value="totalpaybenefits">Total Pay w/ Benefits</label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="notes" value="notes">Notes</label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="agency" value="agency">Agency</label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="status" value="status">Status</label>
-                    <br> </div>
-                <div class=col-md-4>
-                    <h3>Select years to return:</h3>
-                    <label>
-                        <input type="checkbox" id="id2011" value="id2011">2011</label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="id2012" value="id2012">2012</label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="id2013" value="id2013">2013</label>
-                    <br>
-                    <label>
-                        <input type="checkbox" id="id2014" value="id2014">2014</label>
-                    <br> </div>
-                <div class=col-md-4>
-                    <h3>Select salary range:</h3>
-                    <label>
-                        <input type="radio" id="salgt" value="sal-gt">Greater than</label>
-                    <br>
-                    <label>
-                        <input type="radio" id="saleq" value="sal-eq">Equal to</label>
-                    <br>
-                    <label>
-                        <input type="radio" id="sallt" value="sal-lt">Less than</label>
-                    <br>
-                    <label>
-                        <input type=text name=sal-range size=20 value=sal-range>Value</label>
-                    <br> </div>
-        <input type=submit></div>
-         </form>
-        <div class="row dataform">
-            <form action="/db/custom" style="color:black">
-                <h2>SQL Query:</h2>
+    <div class="row dataform">
+        <h2>Query Constructor</h2>
+        <form action="/db/builder" style="color:black">
+            <div class=col-md-6>
+                <h3>Fields</h3>
+                <label>
+                    <input type="checkbox" name="fields" value="id">ID</label>
                 <br>
-                <input type=text name=query_str size=50 value="{{query}}">
-                <input type=submit> </form>
-        </div>
-        <div class=row>
-            <hr>
-            <table border="1">
-                <tr>
-                    <th>ID</th>
-                    <th>EmployeeName</th>
-                    <th>JobTitle</th>
-                    <th>BasePay</th>
-                    <th>OvertimePay</th>
-                    <th>OtherPay</th>
-                    <th>Benefits</th>
-                    <th>TotalPay</th>
-                    <th>TotalPayBenefits</th>
-                    <th>Year</th>
-                    <th>Notes</th>
-                    <th>Agency</th>
-                    <th>Status</th>
-                </tr>
-            </table>
+                <label>
+                    <input type="checkbox" name="fields" value="employeename">Employee Name</label>
+                <br>
+                <label>
+                    <input type="checkbox" name="fields" value="jobtitle">Job Title</label>
+                <br>
+                <label>
+                    <input type="checkbox" name="fields" value="basepay">Base Pay</label>
+                <br>
+                <label>
+                    <input type="checkbox" name="fields" value="overtimepay">Overtime Pay</label>
+                <br>
+                <label>
+                    <input type="checkbox" name="fields" value="otherpay">Other Pay</label>
+                <br>
+                <label>
+                    <input type="checkbox" name="fields" value="otherpay">Benefits</label>
+                <br>
+                <label>
+                    <input type="checkbox" name="fields" value="totalpay">Total Pay</label>
+                <br>
+                <label>
+                    <input type="checkbox" name="fields" value="totalpaybenefits">Total Pay w/ Benefits</label>
+                <br>
+                <label>
+                    <input type="checkbox" name="fields" value="notes">Notes</label>
+                <br>
+                <label>
+                    <input type="checkbox" name="fields" value="agency">Agency</label>
+                <br>
+                <label>
+                    <input type="checkbox" name="fields" value="status">Status</label>
+                <br> </div>
+            <div class=col-md-6>
+                <div class=row>
+                    <h3>Years</h3>
+                    <label>
+                        <input type="checkbox" name="years" value="2011">2011</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" name="years" value="2012">2012</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" name="years" value="2013">2013</label>
+                    <br>
+                    <label>
+                        <input type="checkbox" name="years" value="2014">2014</label>
+                    <br> </div>
+                <div class=row>
+                    <h3>Salary</h3>
+                    <label>
+                        <input type="radio" name="salary" value="sal-gt">Greater than</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="salary" value="sal-eq">Equal to</label>
+                    <br>
+                    <label>
+                        <input type="radio" name="salary" value="sal-lt">Less than</label>
+                    <br>
+                    <label>
+                        <input type=text name="sal-range" size=20 placeholder="10000"></label>
+                    <br> </div>
+            </div>
+            <input type=submit>
+    </div>
+    </form>
+    <div class="row dataform">
+        <form action="/db/custom" style="color:black">
+            <h2>Custom Query</h2>
             <br>
-            <table border="1">
-                <tr>{% for key in keys %}
-                    <th>{{key[0]}}</th>{% endfor %}</tr> {% for row in entries %}
-                <tr> {% for col in row %}
-                    <td>{{ col }}</td> {% endfor %} </tr> {% endfor %} </table>
-        </div>
-
+            <input type=text name=query_str size=100 value="{{query}}">
+            <input type=submit> </form>
+    </div>
+    <div class="row dataform">
+        <h2>Results</h2>
+<!--
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>EmployeeName</th>
+                <th>JobTitle</th>
+                <th>BasePay</th>
+                <th>OvertimePay</th>
+                <th>OtherPay</th>
+                <th>Benefits</th>
+                <th>TotalPay</th>
+                <th>TotalPayBenefits</th>
+                <th>Year</th>
+                <th>Notes</th>
+                <th>Agency</th>
+                <th>Status</th>
+            </tr>
+        </table>
+-->
+        <table border="1">
+            <tr>{% for key in keys %}
+                <th>{{key[0]}}</th>{% endfor %}</tr> {% for row in entries %}
+            <tr> {% for col in row %}
+                <td>{{ col }}</td> {% endfor %} </tr> {% endfor %} </table>
+    </div>
 </div>
