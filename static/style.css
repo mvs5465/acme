@@ -1,9 +1,30 @@
 body {
     font-family: 'Calibri', sans-serif;
+    color: black;
     background-color: black;
 /*    background-image: url("banner.jpg");*/
     background-position: center bottom;
     background-repeat: no-repeat;
+}
+
+table, th, td {
+    
+    padding: 5px;
+    padding-left: 10px;
+}
+
+th {
+    color: black;
+    background-color: darkgrey;
+}
+
+tr:nth-child(even) 
+{
+    background-color: lightgrey;
+}
+tr:nth-child(odd)
+{
+    background-color: white;
 }
 
 .centered {
@@ -60,14 +81,12 @@ body {
     text-align: center;
     color: white;
     padding: 10px;
-    border-bottom: 1px solid white;
 }
 
 .dataform {
     padding: 50px;
     background-color: white;
-    border-top: 1px solid black;
-    
+    border-top: 1px solid black; 
 }
 
 .align-left {
@@ -78,4 +97,10 @@ body {
     width: 33%;
     float: left;
     text-align: left;
+}
+
+.hacker {
+    padding: 50px;
+    background-color: white;
+    border-top: 1px solid black; 
 }

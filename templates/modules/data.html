@@ -1,76 +1,85 @@
 <div class=container-fluid>
+    <div class="row centered dataform"><h2>San Fransisco City Employee Salary Database</h2></div>
     <div class="row dataform">
         <h2>Query Constructor</h2>
         <form action="/db/builder" style="color:black">
             <div class=col-md-6>
                 <h3>Fields</h3>
                 <label>
-                    <input type="checkbox" name="fields" value="id">ID</label>
+                    <input type="checkbox" name="fields" value="id"> ID</label>
                 <br>
                 <label>
-                    <input type="checkbox" name="fields" value="employeename">Employee Name</label>
+                    <input type="checkbox" name="fields" value="employeename"> Employee Name</label>
                 <br>
                 <label>
-                    <input type="checkbox" name="fields" value="jobtitle">Job Title</label>
+                    <input type="checkbox" name="fields" value="jobtitle"> Job Title</label>
                 <br>
                 <label>
-                    <input type="checkbox" name="fields" value="basepay">Base Pay</label>
+                    <input type="checkbox" name="fields" value="basepay"> Base Pay</label>
                 <br>
                 <label>
-                    <input type="checkbox" name="fields" value="overtimepay">Overtime Pay</label>
+                    <input type="checkbox" name="fields" value="overtimepay"> Overtime Pay</label>
                 <br>
                 <label>
-                    <input type="checkbox" name="fields" value="otherpay">Other Pay</label>
+                    <input type="checkbox" name="fields" value="otherpay"> Other Pay</label>
                 <br>
                 <label>
-                    <input type="checkbox" name="fields" value="otherpay">Benefits</label>
+                    <input type="checkbox" name="fields" value="benefits"> Benefits</label>
                 <br>
                 <label>
-                    <input type="checkbox" name="fields" value="totalpay">Total Pay</label>
+                    <input type="checkbox" name="fields" value="totalpay"> Total Pay</label>
                 <br>
                 <label>
-                    <input type="checkbox" name="fields" value="totalpaybenefits">Total Pay w/ Benefits</label>
+                    <input type="checkbox" name="fields" value="totalpaybenefits"> Total Pay w/ Benefits</label>
                 <br>
                 <label>
-                    <input type="checkbox" name="fields" value="notes">Notes</label>
+                    <input type="checkbox" name="fields" value="year"> Years</label>
                 <br>
                 <label>
-                    <input type="checkbox" name="fields" value="agency">Agency</label>
+                    <input type="checkbox" name="fields" value="notes"> Notes</label>
                 <br>
                 <label>
-                    <input type="checkbox" name="fields" value="status">Status</label>
+                    <input type="checkbox" name="fields" value="agency"> Agency</label>
+                <br>
+                <label>
+                    <input type="checkbox" name="fields" value="status"> Status</label>
                 <br> </div>
             <div class=col-md-6>
                 <div class=row>
                     <h3>Years</h3>
                     <label>
-                        <input type="checkbox" name="years" value="2011">2011</label>
+                        <input type="checkbox" name="years" value="2011"> 2011</label>
                     <br>
                     <label>
-                        <input type="checkbox" name="years" value="2012">2012</label>
+                        <input type="checkbox" name="years" value="2012"> 2012</label>
                     <br>
                     <label>
-                        <input type="checkbox" name="years" value="2013">2013</label>
+                        <input type="checkbox" name="years" value="2013"> 2013</label>
                     <br>
                     <label>
-                        <input type="checkbox" name="years" value="2014">2014</label>
+                        <input type="checkbox" name="years" value="2014"> 2014</label>
                     <br> </div>
                 <div class=row>
                     <h3>Salary</h3>
                     <label>
-                        <input type="radio" name="salary" value="sal-gt">Greater than</label>
+                        <input type="radio" name="salary" value="sal-gt"> Greater than</label>
                     <br>
                     <label>
-                        <input type="radio" name="salary" value="sal-eq">Equal to</label>
+                        <input type="radio" name="salary" value="sal-eq"> Equal to</label>
                     <br>
                     <label>
-                        <input type="radio" name="salary" value="sal-lt">Less than</label>
+                        <input type="radio" name="salary" value="sal-lt"> Less than</label>
                     <br>
                     <label>
                         <input type=text name="sal-range" size=20 placeholder="10000"></label>
                     <br> </div>
+                <div class=row>
+                    <h3>Results</h3>
+                    <input type="range" id="results_quantity" name="results" min="1" max="100" style="width:200px" value="50" oninput="output_quantity.value = results_quantity.value"><output id="output_quantity">50</output><br>
+                    <input type=submit>
+                </div>
             </div>
-            <input type=submit>
+            
     </div>
     </form>
     <div class="row dataform">
@@ -101,7 +110,7 @@
             </tr>
         </table>
 -->
-        <table border="1">
+        <table>
             <tr>{% for key in keys %}
                 <th>{{key[0]}}</th>{% endfor %}</tr> {% for row in entries %}
             <tr> {% for col in row %}
