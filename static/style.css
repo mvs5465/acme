@@ -1,5 +1,5 @@
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Calibri', sans-serif;
     background-color: black;
 /*    background-image: url("banner.jpg");*/
     background-position: center bottom;
@@ -42,7 +42,6 @@ body {
 .content {
     text-align: center;
     color: white;
-    font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -62,4 +61,20 @@ body {
     color: white;
     padding: 10px;
     border-bottom: 1px solid white;
+}
+
+.dataform {
+    background-color: white;
+    border-top: 1px solid black;
+    
+}
+
+.align-left {
+    text-align: left;
+}
+
+.form-col {
+    width: 33%;
+    float: left;
+    text-align: left;
 }
