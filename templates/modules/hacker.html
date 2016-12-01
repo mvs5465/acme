@@ -1,124 +1,147 @@
-<div class="hacker">
-    <div class=module>
-        <div class=module-title>Module: {{title}}</div> Your IP address: {{ipaddr}}
-        <hr>
-        <div style="text-align: left;">
-            <ul>Route: {% for route in routes %}
-                <li>{{route}}</li> {% endfor %} </ul>
-        </div>
-        <script>
-            var info = {
-                timeOpened: new Date()
-                , timezone: (new Date()).getTimezoneOffset() / 60
-                , pageon() {
-                    return window.location.pathname
-                }
-                , referrer() {
-                    return document.referrer
-                }
-                , previousSites() {
-                    return history.length
-                }
-                , browserName() {
-                    return navigator.appName
-                }
-                , browserEngine() {
-                    return navigator.product
-                }
-                , browserVersion1a() {
-                    return navigator.appVersion
-                }
-                , browserVersion1b() {
-                    return navigator.userAgent
-                }
-                , browserLanguage() {
-                    return navigator.language
-                }
-                , browserOnline() {
-                    return navigator.onLine
-                }
-                , browserPlatform() {
-                    return navigator.platform
-                }
-                , javaEnabled() {
-                    return navigator.javaEnabled()
-                }
-                , dataCookiesEnabled() {
-                    return navigator.cookieEnabled
-                }
-                , dataCookies1() {
-                    return document.cookie
-                }
-                , dataCookies2() {
-                    return decodeURIComponent(document.cookie.split(";"))
-                }
-                , dataStorage() {
-                    return localStorage
-                }
-                , sizeScreenW() {
-                    return screen.width
-                }
-                , sizeScreenH() {
-                    return screen.height
-                }
-                , sizeDocW() {
-                    return document.width
-                }
-                , sizeDocH() {
-                    return document.height
-                }
-                , sizeInW() {
-                    return innerWidth
-                }
-                , sizeInH() {
-                    return innerHeight
-                }
-                , sizeAvailW() {
-                    return screen.availWidth
-                }
-                , sizeAvailH() {
-                    return screen.availHeight
-                }
-                , scrColorDepth() {
-                    return screen.colorDepth
-                }
-                , scrPixelDepth() {
-                    return screen.pixelDepth
-                }
-                , latitude() {
-                    return position.coords.latitude
-                }
-                , longitude() {
-                    return position.coords.longitude
-                }
-                , accuracy() {
-                    return position.coords.accuracy
-                }
-                , altitude() {
-                    return position.coords.altitude
-                }
-                , altitudeAccuracy() {
-                    return position.coords.altitudeAccuracy
-                }
-                , heading() {
-                    return position.coords.heading
-                }
-                , speed() {
-                    return position.coords.speed
-                }
-                , timestamp() {
-                    return position.timestamp
-                }
-            , };
-            console.log(info.timeOpened);
-            console.log(info.timezone);
-            console.log(info.pageon());
-            console.log(info.referrer());
-            console.log(info.previousSites());
-            console.log(info.browserName());
-            console.log("Browser engine " + info.browserEngine());
-            console.log(info.latitude());
-            console.log(info.longitude());
-        </script>
+<div class="hacker container-fluid">
+    <h2>Visitor Information</h2>
+    <div class=row id="hacker-info">
+        <table id="hacker-table">
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </table>
     </div>
 </div>
+<script>
+    var info = {
+        timeOpened: new Date()
+        , timezone: (new Date()).getTimezoneOffset() / 60
+        , pageon() {
+            return window.location.pathname
+        }
+        , referrer() {
+            return document.referrer
+        }
+        , previousSites() {
+            return history.length
+        }
+        , browserName() {
+            return navigator.appName
+        }
+        , browserEngine() {
+            return navigator.product
+        }
+        , browserVersion1a() {
+            return navigator.appVersion
+        }
+        , browserVersion1b() {
+            return navigator.userAgent
+        }
+        , browserLanguage() {
+            return navigator.language
+        }
+        , browserOnline() {
+            return navigator.onLine
+        }
+        , browserPlatform() {
+            return navigator.platform
+        }
+        , javaEnabled() {
+            return navigator.javaEnabled()
+        }
+        , dataCookiesEnabled() {
+            return navigator.cookieEnabled
+        }
+        , dataCookies1() {
+            return document.cookie
+        }
+        , dataCookies2() {
+            return decodeURIComponent(document.cookie.split(";"))
+        }
+        , dataStorage() {
+            return localStorage
+        }
+        , sizeScreenW() {
+            return screen.width
+        }
+        , sizeScreenH() {
+            return screen.height
+        }
+        , sizeDocW() {
+            return document.width
+        }
+        , sizeDocH() {
+            return document.height
+        }
+        , sizeInW() {
+            return innerWidth
+        }
+        , sizeInH() {
+            return innerHeight
+        }
+        , sizeAvailW() {
+            return screen.availWidth
+        }
+        , sizeAvailH() {
+            return screen.availHeight
+        }
+        , scrColorDepth() {
+            return screen.colorDepth
+        }
+        , scrPixelDepth() {
+            return screen.pixelDepth
+        }
+        , latitude() {
+            return position.coords.latitude
+        }
+        , longitude() {
+            return position.coords.longitude
+        }
+        , accuracy() {
+            return position.coords.accuracy
+        }
+        , altitude() {
+            return position.coords.altitude
+        }
+        , altitudeAccuracy() {
+            return position.coords.altitudeAccuracy
+        }
+        , heading() {
+            return position.coords.heading
+        }
+        , speed() {
+            return position.coords.speed
+        }
+        , timestamp() {
+            return position.timestamp
+        }
+    , };
+    $("#hacker-table").append("<tr><td>Time Opened</td><td>" + info.timeOpened + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Time Zone</td><td>" + info.timezone + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Current Page</td><td>" + info.pageon() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Referrer</td><td>" + info.referrer() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Previous Sites</td><td>" + info.previousSites() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Browser Name</td><td>" + info.browserName() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Browser Engine</td><td>" + info.browserEngine() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Browser Version 1a</td><td>" + info.browserVersion1a() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Browser Version 1b</td><td>" + info.browserVersion1b() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Browser Language</td><td>" + info.browserLanguage() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Browser Online</td><td>" + info.browserOnline() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Browser Platform</td><td>" + info.browserPlatform() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Java Enabled</td><td>" + info.javaEnabled() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Data Cookies Enabled</td><td>" + info.dataCookiesEnabled() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Data Cookies 1</td><td>" + info.dataCookies1() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Data Cookies 2</td><td>" + info.dataCookies2() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Data Storage</td><td>" + info.dataStorage() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Screen Width</td><td>" + info.sizeScreenW() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Screen Height</td><td>" + info.sizeScreenH() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Document Width</td><td>" + info.sizeDocW() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Document Height</td><td>" + info.sizeDocH() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Inner Width</td><td>" + info.sizeInW() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Inner Height</td><td>" + info.sizeInH() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Available Width</td><td>" + info.sizeAvailW() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Available Height</td><td>" + info.sizeAvailH() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Color Depth</td><td>" + info.scrColorDepth() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Pixel Depth</td><td>" + info.srcPixelDepth() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Latitude</td><td>" + info.latitude() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Longitude</td><td>" + info.longitude() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Accuracy</td><td>" + info.accuracy() + "</td></tr>");
+    $("#hacker-table").append("<tr><td>Altitude</td><td>" + info.altitude() + "</td></tr>");
+</script>
